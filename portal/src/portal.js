@@ -11,7 +11,7 @@ async function init() {
   loadingPromises.push(
     loadApp(
       "app1",
-      "/app1",
+      "/app",
       "/app1/setup.js",
       "/app1/store.js",
       globalEventDistributor
@@ -22,7 +22,7 @@ async function init() {
   loadingPromises.push(
     loadApp(
       "app2",
-      "/app2",
+      "/app",
       "/app2/setup.js",
       "/app2/store.js",
       globalEventDistributor
