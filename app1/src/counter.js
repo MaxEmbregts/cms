@@ -1,5 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
+import {decrementCount, incrementCount} from "./actions/actions";
+
 
 class Counter extends React.Component {
     constructor(props) {
@@ -8,11 +10,17 @@ class Counter extends React.Component {
     }
 
     increment = () => {
-        this.props.dispatch({type: "INCREMENT"});
+        const count = this.props.count;
+
+        this.props.incrementCount(count);
+        console.log(this.props.count);
     };
 
     decrement = () => {
-        this.props.dispatch({type: "DECREMENT"});
+        const count = this.props.count;
+
+        this.props.decrementCount(count);
+        console.log(this.props.count);
     };
 
     globalIncrement = () => {
@@ -57,4 +65,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(Counter);
+export default connect(mapStateToProps, {incrementCount, decrementCount})(Counter);

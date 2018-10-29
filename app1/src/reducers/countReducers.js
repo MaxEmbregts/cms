@@ -8,11 +8,13 @@ export default function countReducers(state = initialState, action) {
     switch (action.type) {
         case "INCREMENT":
             return {
-                count: state.count + 1
+                ...state,
+                count: action.payload
             };
         case "DECREMENT":
             return {
-                count: state.count - 1
+                ...state,
+                count: action.payload
             };
         default:
             return state;

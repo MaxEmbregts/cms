@@ -1,10 +1,20 @@
 import {DECREMENT, INCREMENT} from "./types";
 
-export const Increment = count => ({
-    type: 'INCREMENT',
-    count: count + 1
-});
+// export const incrementCounter = count => ({
+//     type: 'INCREMENT',
+//     count: count + 1
+// });
 
-export function Decrement(count) {
-    return {type: DECREMENT, count};
-}
+export const incrementCount = (count) => dispatch => {
+    dispatch({
+        type: INCREMENT,
+        payload: count + 1
+    })
+};
+
+export const decrementCount = (count) => dispatch => {
+    dispatch({
+        type: DECREMENT,
+        payload: count - 1
+    })
+};
