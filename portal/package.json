@@ -21,6 +21,10 @@
   },
   "dependencies": {
     "copy-webpack-plugin": "^4.5.1",
+    "react": "^16.4.1",
+    "react-dnd": "^5.0.0",
+    "react-dnd-html5-backend": "^5.0.1",
+    "react-dom": "^16.4.1",
     "single-spa": "^4.0.0",
     "systemjs": "^0.21.4",
     "zone.js": "^0.8.26"

@@ -1,7 +1,7 @@
 import "zone.js";
 import * as singleSpa from "single-spa";
-import { GlobalEventDistributor } from "./globalEventDistributor";
-import { loadApp } from "./helper";
+import {GlobalEventDistributor} from "./globalEventDistributor";
+import {loadApp} from "./helper";
 
 async function init() {
   const globalEventDistributor = new GlobalEventDistributor();
