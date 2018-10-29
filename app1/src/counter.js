@@ -6,7 +6,6 @@ import {decrementCount, incrementCount} from "./actions/actions";
 class Counter extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props.count);
     }
 
     increment = () => {
@@ -20,15 +19,18 @@ class Counter extends React.Component {
         const count = this.props.count;
 
         this.props.decrementCount(count);
-        console.log(this.props.count);
     };
 
     globalIncrement = () => {
-        this.props.globalEventDistributor.dispatch({type: "INCREMENT"});
+        const count = this.props.count;
+
+        this.props.globalEventDistributor.increment(count);
     };
 
     globalDecrement = () => {
-        this.props.globalEventDistributor.dispatch({type: "DECREMENT"});
+        const count = this.props.count;
+
+        this.props.globalEventDistributor.decrement(count);
     };
 
     render() {

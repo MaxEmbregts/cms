@@ -1,26 +1,35 @@
 import React from "react";
 import {connect} from "react-redux";
+import {decrementCount, incrementCount} from "./actions/actions";
 
 class Counter extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props.count);
     }
 
     increment = () => {
-        this.props.dispatch({type: "INCREMENT"});
+        const count = this.props.count;
+
+        this.props.incrementCount(count);
+        console.log(this.props.count);
     };
 
     decrement = () => {
-        this.props.dispatch({type: "DECREMENT"});
+        const count = this.props.count;
+
+        this.props.decrementCount(count);
     };
 
     globalIncrement = () => {
-        this.props.globalEventDistributor.dispatch({type: "INCREMENT"});
+        const count = this.props.count;
+
+        this.props.globalEventDistributor.increment(count);
     };
 
     globalDecrement = () => {
-        this.props.globalEventDistributor.dispatch({type: "DECREMENT"});
+        const count = this.props.count;
+
+        this.props.globalEventDistributor.decrement(count);
     };
 
     render() {
@@ -57,4 +66,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(Counter);
+export default connect(mapStateToProps, {incrementCount, decrementCount})(Counter);
