@@ -1,9 +1,3 @@
-// import {createStore} from "redux";
-// import countReducers from "./reducers/countReducers";
-//
-// export const storeInstance = createStore(countReducers);
-
-
 import {applyMiddleware, compose, createStore} from 'redux';
 import rootReducer from './reducers/countReducers';
 import thunk from 'redux-thunk';
